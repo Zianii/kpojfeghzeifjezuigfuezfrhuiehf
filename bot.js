@@ -145,5 +145,20 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 
 
 
+                  if(!message.channel.guild) return;
+
+                    if (message.content === prefix + ".") {
+ const embed = new Discord.RichEmbed()
+
+    .setDescription(`**Members info ✨
+💚 xDD
+         message.channel.send({embed});
+
+    }
+      });
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);

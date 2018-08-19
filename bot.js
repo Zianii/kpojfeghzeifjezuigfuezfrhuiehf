@@ -76,5 +76,40 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+    if (message.content.startsWith(prefix + ".")) {
+let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField(' السلام عليكم',`[${client.guilds.size}]  `)
+.setColor('#7d2dbe')
+message.channel.sendEmbed(embed);
+}
+});
+
+client.on('message', message => {
+    if (message.content.startsWith(prefix + "..")) {
+let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('كيفكم؟',`[${client.guilds.size}]  `)
+.setColor('#7d2dbe')
+message.channel.sendEmbed(embed);
+}
+});
+
+client.on('message', message => {
+    if (message.content.startsWith(prefix + "...")) {
+let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('هلا والله',`[${client.guilds.size}]  `)
+.addField(' كيفكم؟ ',` [${client.users.size}] `))
+.setColor('#7d2dbe')
+message.channel.sendEmbed(embed);
+}
+});
+
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);

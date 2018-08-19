@@ -143,18 +143,6 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
     }
       });
 
-client.on('message', function(msg) {
-    const prefix = '+'
-    if(msg.content.startsWith (prefix  + '.')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(msg.guild.iconURL)
-      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-      .addField('**السلام**',`** __عليكم__ **`,true)
-      msg.channel.send({embed:embed});
-    }
-  });
-
 
 
 

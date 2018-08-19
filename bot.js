@@ -144,7 +144,7 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
       });
 
 
-const jackeo = ['283580465862934539' , '283580465862934539' , '283580465862934539' , '']; //Jackeo  حقوقي
+const jackeo = ['283580465862934539' , '283580465862934539' , '400709582285963277' , '']; //Jackeo  حقوقي
 client.on('message', message => { //Jackeo  حقوقي
 var prefix = "."; //Jackeo  حقوقي
   if (message.author.bot) return; //Jackeo  حقوقي

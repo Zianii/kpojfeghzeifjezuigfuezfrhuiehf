@@ -4,7 +4,7 @@ const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`قلت خليني اخربها واكسر ام الرقم القياسي للاونلاين فارفعت حسابي على خادم واذا لقيتني مارديت عليك معناها انا مو هون`,"http://twitch.tv/xmas")
+  client.user.setGame(`XMas`,"http://twitch.tv/xmas")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')

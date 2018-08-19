@@ -76,38 +76,84 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith(prefix + ".")) {
-let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField(' السلام عليكم`)
-.setColor('#7d2dbe')
-message.channel.sendEmbed(embed);
+
+
+  client.on('message', async message => {
+  if(message.content.startsWith(prefix + "رسالة")) {
+    let i = client.users.size;
+    if(message.author.id !== 'اي دي صاحب البوت') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+    var args = message.content.split(' ').slice(1).join(' ');
+    if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
+    setTimeout(() => {
+      message.channel.send(`تم الارسال لـ ${i} شخص`)
+    }, client.users.size * 500);
+    client.users.forEach(s => {
+      s.send(args).catch(e => i--);
+    });
+  }
+});
+  
+
+
+
+
+  client.on('message', async message => {
+  if(message.content.startsWith(prefix + "رسالة")) {
+    let i = client.users.size;
+    if(message.author.id !== 'اي دي صاحب البوت') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+    var args = message.content.split(' ').slice(1).join(' ');
+    if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
+    setTimeout(() => {
+      message.channel.send(`تم الارسال لـ ${i} شخص`)
+    }, client.users.size * 500);
+    client.users.forEach(s => {
+      s.send(args).catch(e => i--);
+    });
+  }
+});
+  
+
+
+ client.on('message', message => {
+        var  user = message.mentions.users.first() || message.author;
+    if (message.content.startsWith("avatar")) {
+message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
 
-client.on('message', message => {
-    if (message.content.startsWith(prefix + "..")) {
-let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('كيفكم؟`)
-.setColor('#7d2dbe')
-message.channel.sendEmbed(embed);
-}
-});
-
-client.on('message', message => {
-    if (message.content.startsWith(prefix + "...")) {
-let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('هلا والله`)
-.addField(' كيفكم؟`))
-.setColor('#7d2dbe')
-message.channel.sendEmbed(embed);
-}
-});
 
 
+  client.on('message',function(message) {
+  if (message.author.bot) return;
+
+
+                  if(!message.channel.guild) return;
+
+                    if (message.content === prefix + "members") {
+ const embed = new Discord.RichEmbed()
+
+    .setDescription(`**Members info ✨
+💚 online:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}
+❤  dnd:       ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
+💛  idle:     ${message.guild.members.filter(m=>m.presence.status == 'idle').size}
+💠   membersCount:  ${message.guild.memberCount - message.guild.members.filter(m=>m.user.bot).size}
+💡 bots: ${message.guild.members.filter(m=>m.user.bot).size} **`)
+         message.channel.send({embed});
+
+    }
+      });
+
+client.on('message', function(msg) {
+    const prefix = '+'
+    if(msg.content.startsWith (prefix  + '.')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField('**السلام**',`** __عليكم__ **`,true)
+      msg.channel.send({embed:embed});
+    }
+  });
 
 
 

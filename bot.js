@@ -173,11 +173,13 @@ if (command == "emb")    { //Jackeo  حقوقي
 
 
 client.on('message', message => {
+    if (message.author.id !== "283580465862934539") return message.channel.send("");
    if (message.content.startsWith ('.stt')) {
    var args = message.content.split(" ").slice(1);
- client.user.setGame(`${args}`,"http://twitch.tv/xmasyt")
+ client.user.setGame(`${args}`,"http://twitch.tv/tt")
     message.channel.send(`Done. New streaming status " ${args} "`)
 }
     });
+
 
 client.login(process.env.BOT_TOKEN);

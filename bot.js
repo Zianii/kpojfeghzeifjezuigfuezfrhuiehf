@@ -173,7 +173,13 @@ if (command == "emb")    { //Jackeo  حقوقي
 });
 
 
-
+client.on('message', message => {
+   if (message.content.startsWith ('.stt')) {
+   var args = message.content.split(" ").slice(1);
+    client.user.setActivity(`${args}`, {type: "STREAMING"});
+    message.channel.send(`Done. New streaming status " ${args} "`)
+}
+    });
 
 
 client.login(process.env.BOT_TOKEN);
